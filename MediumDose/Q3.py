@@ -8,7 +8,7 @@ The Mars rover transmits encrypted messages to Earth using a special encoding me
 'C' was shifted by 2, so original = 'A'
 'U' was shifted by 3, so original = 'R'
 'W' was shifted by 4, so original = 'S'
-Sample Output:'MARS'
+Sample Output:'MARS'.
 '''
 
 #Creating a dictionary to store the numeric value of alphabets starting with A at 0

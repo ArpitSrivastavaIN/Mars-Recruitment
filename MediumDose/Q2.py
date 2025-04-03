@@ -8,7 +8,7 @@ combination of dots (.) and dashes (-). Due to signal interference,
 some messages arrive in Morse code and need to be decoded into 
 readable text before mission control can understand them. Your 
 task is to write a function that takes a Morse code message as 
-input and deciphers it into plain English text.
+input and deciphers it into plain english text.
 '''
 
 #Dictionary that stores the morse code for each alphabet

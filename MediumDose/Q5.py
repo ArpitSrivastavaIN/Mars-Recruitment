@@ -5,7 +5,7 @@
 After 1,499 days on Mars, NASA's Perseverance Rover met two aliens named Muchiko and Sanchiko. They were very friendly and helpful throughout the exploration. As a gesture of friendship, NASA decided to send a gift on the next mission on April 4th — and they chose our Rover, Brick! 🎉
 So, We (MaRSians) had the lucky chance to talk with the Martian People. During our chat with Muchiko, we learned that Martians use a four-number system to represent 3D rotations, unlike our three-number system. Their system is better because it avoids Gimbal lock.
 To help Brick fit in, we need to create a conversion code that will translate our system into theirs.
-Can you write it before the launch?
+Can you write it before the launch?.
 '''
 
 import math
