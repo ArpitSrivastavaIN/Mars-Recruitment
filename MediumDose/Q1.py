@@ -26,6 +26,7 @@ Write a function to get the distance between the marker and camera before and af
 
 import math
 
+#Function to create new frame of reference
 def newFrame(x, y, offset, distance):
 
     new_x = round(x + (offset * (x / distance)), 2)
@@ -33,20 +34,23 @@ def newFrame(x, y, offset, distance):
 
     return new_x, new_y
 
+#Function to calculate distance between 2 points
 def get_distance(x1, y1, z1, x2, y2, z2):
 
     return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2 + (z1 - z2) ** 2)
 
+#Function to calculate the distance between the marker and camera before and after change in frame of reference
 def distBeforeAfter(x, y, z,new_x, new_y, offset, distance):
 
-    dist_before = abs(get_distance(x, y, z, 0, 0, 0))
-    print(dist_before)
+    dist_before = round(abs(get_distance(x, y, z, 0, 0, 0)))
     new_camera_x = round(offset * (x / distance), 2)
     new_camera_y = round(offset * (y / distance), 2)
 
-    print(new_camera_x, new_camera_y)
-    dist_after = abs(get_distance(new_x, new_y, z, new_camera_x, new_camera_y, 0))
-    print(dist_after)
+    print(f"Distance before : {dist_before}")
+    dist_after = round(abs(get_distance(new_x, new_y, z, new_camera_x, new_camera_y, 0)))
+    print(f"Distance after : {dist_after}")
+
+#Taking user input for coordinates of
 x, y, z = input("Enter camera's detection coordinates : ").split()
 x, y, z = int(x), int(y), int(z)
 offset = 55
@@ -57,8 +61,3 @@ new_x, new_y = newFrame(x, y, offset, distance)
 
 print(f"New Position ({new_x}, {new_y}, {z})")
 distBeforeAfter(x, y, z, new_x,new_y, offset, distance)
-
-
-# dist_after = abs(get_distance(x, y, z, new_x, new_y))
-
-
