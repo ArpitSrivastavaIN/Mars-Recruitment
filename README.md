@@ -1,2 +1,63 @@
-# Mars-Recruitment
-Mars Recruitment Task #1
+
+
+
+# Mars Task#1
+
+## Light Dose:
+### 1. Ubuntu Terminal Commands : 
+- mkdir : Commands used to create a new directory 'mkdir <*filename*>.
+- cd <*path*> : Navigating into a directory.
+- touch <*filename*> : Creates a file in the current working directory with filename.
+- mv <*filename1*> <*filename2*> : Renaming filename1 to filename2.
+- find . --name "*.log" : Find command to look for a file that has a log extension.
+- cat <*filename*> : Display the contents of a file in the terminal itself.
+- grep "WORD" <*filename*> : GREP command searches for WORD inside the filename.
+- wc -l <*filename*> : Command to count the number of lines in a text file.
+- date : Command that shows the system's current date and time.
+- top : Command that displays the CPU usage and list of all processes running on the computer.
+- sudo shutdown +10 : Command that will shutdown the computer after 10 minutes. Sudo is needed to get administrative privileges and +10 indicates the timer for the shutdown
+#### Sources : 
+- [Ubuntu Commands Cheatsheet](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/)
+- [Display Lines in a FIle](https://askubuntu.com/questions/442914/calculating-the-number-of-lines-in-a-file)
+-  [Schedule Shutdown](https://www.geeksforgeeks.org/shutdown-command-in-linux-with-examples/)
+### 2.  Bash Scripting:
+#####  Learning Experience :
+- chmod +x *script.sh*  : Add execution permissions to the file so as to directly execute as ./script.sh
+- Learning how to use variables in bash 
+- Learning how to generate a 2 digit random integer using RANDOM in bash
+- `var=$(( RANDOM  %  100))`
+- Using `echo` statement to output messages onto the terminal.
+- Using IF code blocks in bash
+- Generating a ping in bash that doesn't output anything instead stores the result in a variable which is then run through a if code block to check and log if the host was reachable.
+
+#### Sources:
+-[Generate Random 2 digit integer](https://coderwall.com/p/s2ttyg/random-number-generator-in-bash)
+-[IF code blocks in bash](https://devhints.io/bash#conditionals)
+-[Storing ping output in variable](https://stackoverflow.com/questions/45117591/taking-output-from-command-in-bash)
+
+## Medium Dose:
+
+ ### 1. Marker Location Frame:
+#### Logic:
+- Z coordinate of the marker indicates that the camera is at a height of 60 cm from the ground
+- The rover rotates at 55 cm before the marker, which means that on the line connecting the starting point of the rover and the marker it rotates 55 cm before the marker. On this very line the new frame must be created so as to get the rover to precisely rotate around the marker. 
+
+### 2. Morse Code Decryption:
+#### Logic:
+- A dictionary is used to store the Morse code for each alphabet as key and the corresponding alphabet as value to the key
+-  The user input is converted into a list of alphabets and then matched with the dictionary to decode the message to plain English text.
+### 3. Alphabet Position Decryption:
+#### Logic:
+- A dictionary is first generated with keys from 0 to 25 that stores all uppercase alphabets
+- -User input is shifted by shifting the key to find the decoded alphabet.
+- `Equation : new_key = (key - iter - 1) % 26`
+
+	- Here `% 26` is there so that the key loops around the dictionary
+	- iter - 1 to `shift according to its position
+
+### 4. Noise Reduction :
+### 5.   Quaternion System :
+#### Logic : 
+- 
+	
+
