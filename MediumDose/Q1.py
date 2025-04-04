@@ -42,11 +42,15 @@ def get_distance(x1, y1, z1, x2, y2, z2):
 #Function to calculate the distance between the marker and camera before and after change in frame of reference
 def distBeforeAfter(x, y, z,new_x, new_y, offset, distance):
 
+    #Calculating distance before change of reference
     dist_before = round(abs(get_distance(x, y, z, 0, 0, 0)))
+    print(f"Distance before : {dist_before}")
+
+    #Calculating new camer x, y coordinates wrt new frame of reference
     new_camera_x = round(offset * (x / distance), 2)
     new_camera_y = round(offset * (y / distance), 2)
 
-    print(f"Distance before : {dist_before}")
+    #Calculating distance after change of reference    
     dist_after = round(abs(get_distance(new_x, new_y, z, new_camera_x, new_camera_y, 0)))
     print(f"Distance after : {dist_after}")
 
@@ -55,7 +59,10 @@ x, y, z = input("Enter camera's detection coordinates : ").split()
 x, y, z = int(x), int(y), int(z)
 offset = 55
 
+#Calculate distance between origin and marker
 distance = get_distance(x, y, 0, 0, 0, 0)
+
+#Find New coordinates of marker
 new_x, new_y = newFrame(x, y, offset, distance) 
 
 

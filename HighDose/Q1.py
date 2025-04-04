@@ -42,30 +42,72 @@ Good Luck, Future MaRsians! The Arena awaits your command!
 
 import os
 
+def obstacle_mapper(n, obstacle_ls):
+    map_matrix = [[1 for i in range(n)] for j in range(n)]
+    half = n // 2
+    map_matrix[half][half] = "S"
+    
+    for obstacle in obstacle_ls:
+        x, y = obstacle[0], obstacle[1]
+        # map_matrix[n // 2 - obstacle[1]][n // 2 - obstacle[0]] = 0
+                    
+        if x == 0 and y != 0:
+            map_matrix[half - y][half] = 0
+        
+        elif y == 0 and x != 0:
+            map_matrix[half][half + x] = 0
+        
+        elif x > 0 and y!= 0: # 1st quad
+            map_matrix[half - y][half + x] = 0
+
+        elif x < 0 and y < 0:
+            map_matrix[half - y][half + x] = 0
+
+        elif x < 0 and y > 0:
+            map_matrix[half - y][half + x] = 0
+        
+
+    return map_matrix 
+
+
 file = open(os.getcwd() + "/sample.txt", "r")
 
 data = file.read().split("\n")
 matrix = [line.split() for line in data]
 
 
-obstacle_ls = []
-
+obstacle_ls = [] 
 
 for obstacle in matrix:
     y_coord = int(obstacle[0]) - int(obstacle[2])
     x_coord = int(obstacle[1]) - int(obstacle[3])
     obstacle_ls.append([x_coord, y_coord])
 
-n = max(max(i[0], i[1]) for i in obstacle_ls) * 2 + 1
+n = max(max(abs(i[0]), abs(i[1])) for i in obstacle_ls) * 2 + 1
 
-map_matrix = [[0 for i in range(n)] for j in range(n)]
+map_matrix = obstacle_mapper(n, obstacle_ls)
 
-map_matrix[n // 2 - 0][n // 2 - 0] = "A"
-
-for obstacle in obstacle_ls:
-    map_matrix[n // 2 - obstacle[1]][n // 2 - obstacle[0]] = "1"
-
+print("---MAP---\n")
 for line in map_matrix:
     for position in line:
         print(position, end=" ")
-    print()     
+    print()   
+
+final_pt = 4
+path_matrix = obstacle_mapper((final_pt * 2) + 1, obstacle_ls)
+path_matrix[0][final_pt * 2] = "F"
+
+print("\n\n ---PATH---\n\n")
+
+for line in path_matrix:
+    for position in line:
+        print(position, end=" ")
+    print()  
+
+routes = []
+
+
+
+
+
+print(obstacle_ls)
