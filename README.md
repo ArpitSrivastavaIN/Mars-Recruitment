@@ -56,8 +56,27 @@
 	- iter - 1 to `shift according to its position
 
 ### 4. Noise Reduction :
+#### Login:
+- In a sensor data reading has large and small peaks that result in an uneven graph. To fix this we first apply the Sanchiko filter that removes or reduces the noise in the graph by remove the large peaks and the Muchiko filter is used the remove the small peaks based on neighbouring values by applying average on the data neighbouring that reading. However the window size can be altered based on the data size so as to keep the resolution of the sensor reading and ensure a smooth dataset to be used.
+#### Source:
+- [Filtering Sensor data](https://www.youtube.com/watch?v=4VNySdwTW_w)
 ### 5.   Quaternion System :
 #### Logic : 
-- 
-	
+
+## High Dose:
+### 1.  Guide Rover Brick:
+#### Logic:
+-  Obstacles will be converted to coordinates so as to easily map them the North direction and South direction will affect the y coordinates and the East and West will decide the x coordinate. 
+- A matrix size must be decided by finding the largest individual coordinate x or y and bee multiplied by 2 and 1 added to it
+- -Mapping obstacles on a 2d matrix in python is tough because the origin isn't at `map[0][0]` instead at `map[n, n]` where n is the maximum coordinate
+- - With this logic we iterate through the obstacle_ls and change the value of safe positions i.e 1 to 0 which represents obstacle. For better viewing the map the origin has been set to S
+#### Path finding : 
+
+### 3. Behaviour Tree:
+- File attached as pdf inside high dose.
+
+## Maze Rover Experience :
+### What i learnt? : 
+- Understanding how the rover uses onboard sensor to detect the walls in the maze so that it can maneuver through the maze while applying the simplest route. We learnt how the rover deals with different scenarios within the maze how it deals with intersections, dead end and straight paths. Like for a in intersection it will calculate which path is the longest turn in the direction and move towards it. At a dead end the rover gets reading that at all three direction front, left and right the distance from the wall is the same that means that it is at a dead end and must take a 180 degree u-turn and go back. At a straight path it must continuously keep checking its left and right sensor reading for an intersection if it encounters an intersection it stops and then analyses the intersection to act accordingly. We also understand how the rover must align it self to that it is at the middle of the walls for accurate execution of path-finding to reach the Red Gate.
+- Solving the maze was really fun. Spamming the speed increase button and then try-harding the direction keys helped us to solve it within 6 minutes. We also learnt about creating an executable using bash and how the sensors and the motor of the rover interact with each other. How we create a subscription to the camera to access its feed to get sensor reading and publish that data using a publisher. 
 

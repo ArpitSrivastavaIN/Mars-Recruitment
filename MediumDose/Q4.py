@@ -5,6 +5,7 @@
 '''
 
 import os
+import statistics
 
 def average(data):
     average = 0
@@ -15,9 +16,13 @@ def average(data):
     return average
 
 def muchiko(data, window_size):
-    data = [average([data[i], data[i + 1], data[i + 2]]) for i in range(len(data) - 2)] 
-    print(data)       
+    data = [average([data[i + j] for j in range(window_size)]) for i in range(len(data) - window_size + 1)] 
+    return data 
 
+def sanchiko(data , window_size):
+    data =  [sorted([data[i + j] for j in range(window_size)]) for i in range(len(data) - window_size + 1)]
+    data = [int(statistics.median(sublist)) for sublist in data]
+    return data
 
 window_size = 3
 
@@ -25,6 +30,9 @@ file = open(os.getcwd() + "/log.txt", "r")
 
 data = file.read().split()
 data = [int(i) for i in data]
+print(f"Unfiltered Data : {data}")
 
-muchiko(data, window_size)
+data = muchiko(data, window_size)
+data = sanchiko(data, window_size)
 
+print(f"Filtered Data :   {data}")

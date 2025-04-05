@@ -8,11 +8,8 @@ combination of dots (.) and dashes (-). Due to signal interference,
 some messages arrive in Morse code and need to be decoded into 
 readable text before mission control can understand them. Your 
 task is to write a function that takes a Morse code message as 
-<<<<<<< HEAD
 input and deciphers it into plain english text.
-=======
-input and deciphers it into plain English text.
->>>>>>> ef84e687321e320de49c32f1c405d6c956c236b5
+
 '''
 
 #Dictionary that stores the morse code for each alphabet
