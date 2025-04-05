@@ -61,7 +61,12 @@
 #### Source:
 - [Filtering Sensor data](https://www.youtube.com/watch?v=4VNySdwTW_w)
 ### 5.   Quaternion System :
-#### Logic : 
+#### Logic :
+-  Quaternion's are a four number system of the form  *a* + *b*i + *c*j + *d*k where a, b, c, d are coefficients and 1, i, j, k are the basis vectors.
+- The 3d system is Euler angles where z represents the yaw the y representing pitch and x representing the roll Here in the equations Psi represents rotation about the Z- axis Theta the rotation about y axis and Chi the rotation about x.
+
+#### Sources :
+- [Euler to Quaternion Conversion](https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles)
 
 ## High Dose:
 ### 1.  Guide Rover Brick:
