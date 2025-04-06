@@ -2,7 +2,11 @@
 #Arpit Srivastava
 
 '''
-The Mars rover transmits encrypted messages to Earth using a special encoding method. Your task is to decode the message by reversing this pattern. (The input will contain only alphabets. If any letters are in lowercase, convert them to uppercase. The final output should always be in all caps.)
+The Mars rover transmits encrypted messages to Earth 
+using a special encoding method. Your task is to decode 
+the message by reversing this pattern. (The input will 
+contain only alphabets. If any letters are in lowercase, 
+convert them to uppercase. The final output should always be in all caps.)
         Sample Input:'NCUW'
 'N' was shifted by 1, so original = 'M'
 'C' was shifted by 2, so original = 'A'
