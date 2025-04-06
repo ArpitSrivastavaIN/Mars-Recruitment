@@ -63,8 +63,8 @@
 ### 5.   Quaternion System :
 #### Logic :
 -  Quaternion's are a four number system of the form  *a* + *b*i + *c*j + *d*k where a, b, c, d are coefficients and 1, i, j, k are the basis vectors.
-- The 3d system is Euler angles where z represents the yaw the y representing pitch and x representing the roll Here in the equations Psi represents rotation about the Z- axis Theta the rotation about y axis and Chi the rotation about x.
-
+- The 3d system is Euler angles where z represents the yaw the y representing pitch and x representing the roll Here in the equations Psi represents rotation about the Z- axis Theta the rotation about y axis and Chi the rotation about x. 
+ ![](https://github.com/ArpitSrivastavaIN/Mars-Recruitment/blob/main/Images/qequation.png?raw=true)
 #### Sources :
 - [Euler to Quaternion Conversion](https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles)
 
@@ -74,8 +74,7 @@
 -  Obstacles will be converted to coordinates so as to easily map them the North direction and South direction will affect the y coordinates and the East and West will decide the x coordinate. 
 - A matrix size must be decided by finding the largest individual coordinate x or y and bee multiplied by 2 and 1 added to it
 - -Mapping obstacles on a 2d matrix in python is tough because the origin isn't at `map[0][0]` instead at `map[n, n]` where n is the maximum coordinate
-- - With this logic we iterate through the obstacle_ls and change the value of safe positions i.e 1 to 0 which represents obstacle. For better viewing the map the origin has been set to S
-#### Path finding : 
+- - With this logic we iterate through the obstacle_ls and change the value of safe positions i.e 1 to 0 which represents obstacle. For better viewing the map the origin has been set to S.
 
 ### 3. Behaviour Tree:
 - File attached as pdf inside high dose.
